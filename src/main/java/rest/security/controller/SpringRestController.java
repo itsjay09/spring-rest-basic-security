@@ -7,11 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("spring-rest-api")
+@RequestMapping("rest-resources")
 public class SpringRestController {
 
-    @GetMapping("/message")
-    public ResponseEntity<String> getRestAPIMessage() {
-        return new ResponseEntity<>("Response message", HttpStatus.OK);
+    @GetMapping("/user")
+    public ResponseEntity<String> getUserMessage() {
+        return new ResponseEntity<>("Response message from user", HttpStatus.OK);
+    }
+
+    @GetMapping("/admin")
+    public ResponseEntity<String> getAdminMessage() {
+        return new ResponseEntity<>("Response message from admin", HttpStatus.OK);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<String> getDefaultMessage() {
+        return new ResponseEntity<>("Default Response message", HttpStatus.OK);
     }
 }
